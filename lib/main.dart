@@ -85,7 +85,19 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Khairozzaman"),),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+
+                decoration: BoxDecoration(color: Colors.white),
+                accountName: Text("Khairozzaman", style: TextStyle(color: Colors.black),),
+                accountEmail: Text("info@gmail.com",style: TextStyle(color: Colors.black),),
+                currentAccountPicture: Image.network("https://pixlok.com/wp-content/uploads/2021/05/flutter-logo-768x768.jpg"),
+                onDetailsPressed: (){
+                  MySnanckBar("Profile", context);
+                },
+              )
+            ),
             ListTile(leading: Icon(Icons.home) ,
               title: Text("Home"),
               onTap: (){
@@ -116,11 +128,9 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
- 
-
-
 
     );
+
 
   }
 }
