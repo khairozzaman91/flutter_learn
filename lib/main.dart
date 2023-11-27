@@ -85,11 +85,31 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Khairozzaman")),
-            ListTile(title: Text("Home"),),
-            ListTile(title: Text("Profile"),),
-            ListTile(title: Text("Contact"),),
-            ListTile(title: Text("Address"),)
+            DrawerHeader(child: Text("Khairozzaman"),),
+            ListTile(leading: Icon(Icons.home) ,
+              title: Text("Home"),
+              onTap: (){
+              MySnanckBar("Home", context);
+              },
+            ),
+            ListTile(leading: Icon(Icons.person),
+                title: Text("Profile"),
+              onTap: (){
+              MySnanckBar("Profile", context);
+              },
+            ),
+            ListTile(leading: Icon(Icons.contact_mail),
+                title: Text("Contact"),
+                onTap: (){
+                   MySnanckBar("Contact", context);
+                },
+            ),
+            ListTile(leading: Icon(Icons.phone),
+                title: Text("phone"),
+              onTap: (){
+              MySnanckBar("Phone", context);
+              },
+            )
 
 
 
