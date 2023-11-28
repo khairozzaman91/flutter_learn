@@ -36,6 +36,21 @@ class HomeActivity extends StatelessWidget {
     );
   }
 
+  MyAlertDialog(context){
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+            return Expanded(
+                child: AlertDialog(
+                  title: Text("Alert!"),
+                  content: Text("Do you want to delet ?"),
+                )
+            );
+        }
+    );
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -128,8 +143,80 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
+      // body: Container(
+      //
+      //   height: 250,
+      //   width: 250,
+      //   alignment: Alignment.center,
+      //   margin: EdgeInsets.fromLTRB(80, 160, 60, 20),
+      //  // padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+      //   decoration: BoxDecoration(
+      //     color: Colors.blue,
+      //     border: Border.all(color: Colors.green, width: 6)
+      //   ),
+      //  child: Image.asset('assets/images/welcome.png'),
+      //
+      // ),
+
+      // body: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: [
+      //     Container(
+      //       height: 100,
+      //       width: 100,
+      //       child: Image.asset("assets/images/welcome.png"),
+      //     ),
+      //     Container(
+      //       height: 100,
+      //       width: 100,
+      //       child: Image.asset("assets/images/welcome.png"),
+      //     ),
+      //     Container(
+      //       height: 100,
+      //       width: 100,
+      //       child: Image.asset("assets/images/welcome.png"),
+      //     )
+      //
+      //   ],
+      // ),
+   body: Column(
+     mainAxisAlignment: MainAxisAlignment.start,
+     children: [
+       Padding(padding:EdgeInsets.all(20),
+         child: TextField(
+           decoration: InputDecoration(
+             border: OutlineInputBorder(),
+             labelText: 'Frist Name'
+           ),
+         ),
+       ),
+       Padding(padding:EdgeInsets.all(20),
+         child: TextField(
+           decoration: InputDecoration(
+               border: OutlineInputBorder(),
+               labelText: 'Last Name'
+           ),
+         ),
+       ),
+       Padding(padding:EdgeInsets.all(20),
+         child: TextField(
+           decoration: InputDecoration(
+               border: OutlineInputBorder(),
+               labelText: 'Email Address'
+           ),
+         ),
+       ),
+       Padding(padding:EdgeInsets.fromLTRB(10,0,10,0),
+         child: ElevatedButton(onPressed: (){},
+           child: Text('Login'),
+         ),
+       ),
+
+     ],
+   ),
 
     );
+    
 
 
   }
